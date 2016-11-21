@@ -1,0 +1,41 @@
+<h2>This week's calls to action</h2>
+
+{{#each ctas as |cta|}}
+  {{#if cta.isCurrent}}
+    <div class="row">
+      <div class="col-sm-6">
+        {{#bs-panel title=cta.title class="panel-primary"}}
+          {{format-content cta.content}}
+        {{/bs-panel}}
+      </div>
+      <div class="col-sm-6">
+        {{#if cta.notes}}
+          {{#bs-panel title="Notes" class="panel-default"}}
+            {{format-content cta.notes}}
+          {{/bs-panel}}
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+{{/each}}
+
+<h2>Previous calls to action</h2>
+
+{{#each ctas as |cta|}}
+  {{#if (not cta.isCurrent)}}
+    <div class="row">
+      <div class="col-sm-6">
+        {{#bs-panel title=cta.title class="panel-info"}}
+          {{format-content cta.content}}
+        {{/bs-panel}}
+      </div>
+      <div class="col-sm-6">
+        {{#if cta.notes}}
+          {{#bs-panel title="Notes" class="panel-default"}}
+            {{format-content cta.notes}}
+          {{/bs-panel}}
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+{{/each}}

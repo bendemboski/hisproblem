@@ -38,8 +38,11 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  ENV.APP.apiHost = 'https://mhiu234b0l.execute-api.us-east-1.amazonaws.com';
   if (environment === 'production') {
-
+    ENV.APP.apiPath = 'prod';
+  } else {
+    ENV.APP.apiPath = 'stage';
   }
 
   return ENV;

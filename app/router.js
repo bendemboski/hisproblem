@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('cta');
+  this.route('leadership');
+  this.route('senators');
+  this.route('reps');
+  this.route('tips');
+  this.route('loading');
 });
 
 export default Router;
